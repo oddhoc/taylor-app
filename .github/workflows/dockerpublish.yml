@@ -63,4 +63,4 @@ jobs:
           docker tag image $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
           
-          curl -u tskinn:"${{ secret.MY_TOKEN }}" -d '{"ref":"${{ github.sha }}","required_contexts":[]}' https://api.github.com/repos/oddhoc/taylor-app/deployments
+          curl -u tskinn:"${{ secrets.MY_TOKEN }}" -d '{"ref":"${{ github.sha }}","required_contexts":[]}' https://api.github.com/repos/oddhoc/taylor-app/deployments

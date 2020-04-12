@@ -3,8 +3,7 @@ job "taylor-test" {
   type = "service"
 
   group "taylor-test" {
-    count = 1
-
+    count = 2
     restart {
       attempts = 3
       interval = "5m"
@@ -30,7 +29,7 @@ job "taylor-test" {
 
       service {
         name = "taylor-test"
-        tags = ["urlprefix-/taylor-test"]
+        tags = ["urlprefix-/httpbin"]
         port = "http"
         check {
           name     = "taylor-test http alive"
@@ -40,7 +39,6 @@ job "taylor-test" {
           timeout  = "2s"
         }
       }
-
     }
   }
 }

@@ -14,7 +14,7 @@ job "taylor-test" {
     task "taylor-test" {
       driver = "docker"
       config {
-        image = "tskinn12/taylor-test:latest"
+        image = "tskinn12/taylor-test:[[ env "DEPLOY_TAG" ]]"
         port_map {
           http = 80
         }

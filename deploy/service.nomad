@@ -29,7 +29,7 @@ job "taylor-test" {
 
       service {
         name = "taylor-test"
-        tags = ["urlprefix-/httpbin", "strip=/httpbin"]
+        tags = ["urlprefix-/httpbin strip=/httpbin"]
         port = "http"
         check {
           name     = "taylor-test http alive"

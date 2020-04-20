@@ -4,9 +4,10 @@ job "taylor-test" {
 
   update {
     auto_revert = true
-    healthy_deadline = "2m"
+    healthy_deadline = "1m"
     min_healthy_time = "30s"
     max_parallel = 1
+    progress_deadline = "3m"
   }
 
   group "taylor-test" {
@@ -42,7 +43,7 @@ job "taylor-test" {
         check {
           name     = "taylor-test http alive"
           type     = "http"
-          path     = "/status/500"
+          path     = "/status/200"
           interval = "10s"
           timeout  = "2s"
         }

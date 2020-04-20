@@ -5,6 +5,8 @@ job "taylor-test" {
   update {
     auto_revert = true
     healthy_deadline = "2m"
+    min_healthy_time = "30s"
+    max_parallel = 1
   }
 
   group "taylor-test" {

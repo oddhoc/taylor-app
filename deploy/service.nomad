@@ -2,13 +2,13 @@ job "taylor-test" {
   datacenters = ["local"]
   type = "service"
 
+  update {
+    auto_revert = true
+    healthy_deadline = "2m"
+  }
+
   group "taylor-test" {
     count = 2
-
-    update {
-      auto_revert = true
-      healthy_deadline = "2m"
-    }
 
     restart {
       attempts = 3

@@ -1,5 +1,5 @@
 files  = [
-	"/myapp/deploy/service.nomad",
+	"deploy/service.nomad",
 ]
 
 step "run" {

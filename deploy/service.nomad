@@ -3,12 +3,12 @@ job "taylor-test" {
   type = "service"
 
   group "taylor-test" {
-		count = 2
+    count = 2
 
-		update {
-			auto_revert = true
-			healthy_deadline = "2m"
-		}
+    update {
+      auto_revert = true
+      healthy_deadline = "2m"
+    }
 
     restart {
       attempts = 3

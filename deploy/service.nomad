@@ -11,7 +11,7 @@ job "taylor-test" {
   }
 
   group "taylor-test" {
-    count = 2
+    count = 4
 
     restart {
       attempts = 3
@@ -43,7 +43,7 @@ job "taylor-test" {
         check {
           name     = "taylor-test http alive"
           type     = "http"
-          path     = "/status/500"
+          path     = "/status/200"
           interval = "10s"
           timeout  = "2s"
         }

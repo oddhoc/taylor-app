@@ -43,7 +43,7 @@ job "taylor-test" {
         check {
           name     = "taylor-test http alive"
           type     = "http"
-          path     = "/status/200"
+          path     = "/status/500"
           interval = "10s"
           timeout  = "2s"
         }
